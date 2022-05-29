@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = "http://localhost:4200/")
+@RequestMapping("/habilidad")
+//@CrossOrigin(origins = "http://localhost:4200/")
+//@CrossOrigin(origins = "*")
+@CrossOrigin
 
 public class PersonaController {
     @Autowired IPersonaService ipersonaservice;
@@ -42,11 +45,10 @@ public class PersonaController {
     }
 
 @PutMapping("/editar")
-    //public String crearEducacion(@RequestBody Educacion educacion){
+    
     public void editPersona(@RequestBody Persona persona){
         ipersonaservice.savePersona(persona);
-        //return "{"clave": "La educacion fue creada correctamente"}";
-        //return "La educacion fue creada correctamente";
+        
      }
 
 
